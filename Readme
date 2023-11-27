@@ -33,3 +33,7 @@ FASTAPI
   For activating backend
 
   uvicorn main:app --reload
+
+ For activating backend
+
+npm start
