@@ -28,3 +28,8 @@ FASTAPI
     GET  /api/todo{id} - Get Todo by Id
     PUT  /api/todo{id} - Put Todo
   DELETE /api/todo{id} - Delete Todo
+
+
+  For activating backend
+
+  uvicorn main:app --reload

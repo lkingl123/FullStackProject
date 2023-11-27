@@ -3,7 +3,8 @@ from model import Todo
 # This is the MongoDB driver
 import motor.motor_asyncio
 
-client = motor.motor_asyncio.AsyncIOMotorClient('mongodb+srv://lkingl123:Kingloong1@cluster0.o1jpmyb.mongodb.net/')
+# client = motor.motor_asyncio.AsyncIOMotorClient('mongodb+srv://lkingl123:Kingloong1@cluster0.o1jpmyb.mongodb.net/')
+client = motor.motor_asyncio.AsyncIOMotorClient('mongodb://localhost:27017/')
 database = client.TodoList
 collection = database.todo
 
