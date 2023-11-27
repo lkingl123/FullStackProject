@@ -5,6 +5,16 @@ REACT
 MongoDB
 
 
+https://www.youtube.com/watch?v=OzUzrs8uJl8&ab_channel=freeCodeCamp.org - video tutorial
+
 MongoDB community server download https://www.mongodb.com/try/download/community-kubernetes-operator
 MongoDB shell - in the msi installation option
 CTRL + SHIFT + P to create an environment
+
+
+
+Command for starting the code
+
+pip install pipenv
+pipenv shell
+pipenv install -r requirements.txt
