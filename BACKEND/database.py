@@ -3,8 +3,7 @@ from model import Todo
 # This is the MongoDB driver
 import motor.motor_asyncio
 
-# client = motor.motor_asyncio.AsyncIOMotorClient('mongodb+srv://lkingl123:Kingloong1@cluster0.o1jpmyb.mongodb.net/')
-client = motor.motor_asyncio.AsyncIOMotorClient('mongodb://localhost:27017/')
+client = motor.motor_asyncio.AsyncIOMotorClient('mongodb+srv://lkingl123:Kingloong1@cluster0.o1jpmyb.mongodb.net/')
 database = client.TodoList
 collection = database.todo
 
@@ -21,10 +20,17 @@ async def fetch_all_todos():
         todos.append(Todo(**document))
     return todos
 
+# async def create_todo(todo):
+#     document = todo
+#     result = await collection.insert_one(document)
+#     return result
+
 async def create_todo(todo):
     document = todo
     result = await collection.insert_one(document)
-    return result
+    # Assuming you want to return the inserted item
+    return {"title": document["title"], "description": document["description"]}
+
 
 async def update_todo(title, desc):
     await collection.update_one({"title":title},{"$set":{"description":desc}})

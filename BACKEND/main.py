@@ -1,3 +1,4 @@
+from database import collection
 from model import Todo
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -60,8 +61,8 @@ async def put_todo(title:str, desc:str):
 
 
 @app.delete("/api/todo{title}")
-async def delete_todo(title, desc:str):
-    response = await delete_todo(title)
+async def delete_todo(title):
+    response = await collection.delete_one({"title": title})
     if response:
-        return "Successfully deelte todo item!"
+        return f"Successfully delete {title} todo item!"
     raise HTTPException(404, f"There is no TODO item with this {title}") 
