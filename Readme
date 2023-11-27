@@ -18,3 +18,13 @@ Command for starting the code
 pip install pipenv
 pipenv shell
 pipenv install -r requirements.txt
+
+
+FASTAPI
+
+    Get  / - read root
+    GET  /api/todo - Get Todo
+    POST /api/todo - Post Todo
+    GET  /api/todo{id} - Get Todo by Id
+    PUT  /api/todo{id} - Put Todo
+  DELETE /api/todo{id} - Delete Todo
